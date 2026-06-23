@@ -1,28 +1,25 @@
 import streamlit as st
-import pandas as pd
-import os
 
-# Configuración de la página
 st.set_page_config(
     page_title="DanceManager",
-    page_icon="💃",
-    layout="wide"
+    page_icon="💃"
 )
 
-CARPETA = "cursos"
+st.title("💃 DanceManager")
+st.subheader("Sistema de Gestión para Academia de Baile")
 
-# Crear carpeta si no existe
-if not os.path.exists(CARPETA):
-    os.makedirs(CARPETA)
+st.success("¡La aplicación funciona correctamente!")
 
-# Cursos iniciales
-cursos_base = [
-    "Ballet",
-    "Salsa",
-    "Bachata",
-    "Danza Urbana",
-    "Kpop",
-    "Contemporaneo"
-]
+curso = st.selectbox(
+    "Selecciona un curso",
+    [
+        "Ballet",
+        "Salsa",
+        "Bachata",
+        "Danza Urbana",
+        "Kpop",
+        "Contemporáneo"
+    ]
+)
 
-st
+st.write("Curso seleccionado:", curso)
